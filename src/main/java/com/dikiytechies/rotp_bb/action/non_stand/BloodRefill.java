@@ -14,6 +14,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponent;
@@ -57,7 +58,7 @@ public class BloodRefill extends VampirismAction {
                 }
             }
             power.consumeEnergy((power.getMaxEnergy() / 10) / 100 * BBAddonConfig.fillBottleMultiplier.get());
-            playEntitySound(user, SoundEvents.BOTTLE_FILL, 0.75f, 1.0F, false);
+            world.playSound(null, user.blockPosition(), SoundEvents.BOTTLE_FILL, SoundCategory.PLAYERS, 0.75f, 1.0F);
         }
     }
 
